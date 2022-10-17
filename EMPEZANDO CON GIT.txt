@@ -1,0 +1,129 @@
+Nos ponemos en C y miramos la versión
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c
+$ git --version
+git version 2.38.0.windows.1
+
+
+Creamos la carpeta de trabajo
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c
+$ mkdir pruebagit
+
+Para crear el repositorio git con git init
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c/pruebagit
+$ git init
+Initialized empty Git repository in C:/pruebagit/.git/
+
+
+Para ver los documentos ocultos  ls -la
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c/pruebagit (master)
+$ ls -la
+total 12
+drwxr-xr-x 1 OMV 197121 0 Oct  6 18:38 ./
+drwxr-xr-x 1 OMV 197121 0 Oct  6 18:36 ../
+drwxr-xr-x 1 OMV 197121 0 Oct  6 18:38 .git/
+
+Ponemos el nombre de usuario
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c/pruebagit (master)
+$ git config --global user.name manteigavazquez
+
+Y comprobamos el nombre
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c/pruebagit (master)
+$ git config user.name
+manteigavazquez
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c/pruebagit (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+core.editor=notepad
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=manteigavazquez
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+Para abrir el editor que estas usando "notepad"
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c/pruebagit (master)
+$ git config --global core.editor "notepad"
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c/pruebagit (master)
+$ git config --global --edit
+
+
+
+Para clonar ejemplos de sql server desde la pagina de git hub copiamos el enlace
+y o pegamos en la bash con el comando git clone
+
+
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c
+$ git clone https://github.com/microsoft/sql-server-samples.git
+Cloning into 'sql-server-samples'...
+remote: Enumerating objects: 36998, done.
+remote: Total 36998 (delta 0), reused 0 (delta 0), pack-reused 36998
+Receiving objects: 100% (36998/36998), 443.59 MiB | 3.21 MiB/s, done.
+Resolving deltas: 100% (18765/18765), done.
+warning: Clone succeeded, but checkout failed.
+You can inspect what was checked out with 'git status'
+and retry with 'git restore --source=HEAD :/'
+
+warning: Clone succeeded, but checkout failed.
+You can inspect what was checked out with 'git status'
+and retry with 'git restore --source=HEAD :/'
+
+
+Para abrir un fichero en el notepad start notepad y el fichero
+(en este caso .gitignore)
+
+
+Para saber con que está linkado git remote -v 
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c/sql-server-samples/samples (master)
+$ git remote -v
+origin  https://github.com/microsoft/sql-server-samples.git (fetch)
+origin  https://github.com/microsoft/sql-server-samples.git (push)
+
+
+Metemos un archivo y hacemos un status
+
+
+OMV@DESKTOP-4BR36G5 MINGW64 /c/sql-server-samples/samples (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        instEditoriales.sql
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lo añadimos con git add .
+
+git commi
+
+
+
+
+
