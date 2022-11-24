@@ -43,15 +43,67 @@ Get-ExecutionPolicy
 #PS C:\Windows\system32> Get-ExecutionPolicy
 #Restricted
 
-
+#Para cambiar la politica de ejecución 
 Set-ExecutionPolicy Unrestricted
 
 #PS C:\Windows\system32> Set-ExecutionPolicy 
 
+#Insatalar el modulo para SQL
+Install-Module -Name SqlServer
+
+#Restaurar por defecto
+$psISE.Options.RestoreDefaults()
+
+#Cambiar el color de fondo
+$psISE.Options.ConsolePaneBackgroundColor= "blue"
+
+#Cambiar el tipo de letra 
+$psISE.Options.FontName = "Arial"
+
+ #Cambiar el tamañano de letra
+$psISE.Options.FontSize = 25
+
+#el zoom la fuente 
+$psISE.Options.Zoom = 175
+
+
+#Alias
+
+alias
+get-alias ls
+
+# upmo --> alias de update modules
+
+#Obtenenr alias de un cdmlet "Get-Service"
+get-alias -Definition "Get-Service"
+get-alias -Definition "Get-Alias"
+
+#Crear nuestro propios alias temporales
+New-Alias -Name d -Value get-childitem
+
+#Comprobamos
+d
+
+
+ #Ver los procesos que estaqn ocurriendo
+
+ Get-Process
+
+ # que me lo mande a un fichero
+ Get-Process | out-file c:\procesos.txt
+
+ #que me lo abra con un programa 
+notepad C:\procesos.txt
 
 
 
+#·pipeline . envio de ficheros
+Get-Process | Export-CSV proc.csv
+notepad .\procs.csv
 
+get-process | out-Gridiew
 
-
-
+#para decirle que el modulo que vas a instalar es de confianza
+Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
+#Instalar el modulo para SQL
+Install-Module -Name SqlServer
