@@ -105,5 +105,12 @@ get-process | out-Gridiew
 
 #para decirle que el modulo que vas a instalar es de confianza
 Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
+
 #Instalar el modulo para SQL
-Install-Module -Name SqlServer
+Install-Module -Name SqlServer -AllowClobber #(añadimos -AllowClobber si nos da un error)
+
+#para encontrar el modulo
+Find-Module sqlServer
+
+#Para actualizar el modulo
+Update-Module -Name SqlServer -AllowClobber
